@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>登陆欢迎页</title>
+	<script src="../public/js/jquery.min.js"></script>
+	<script src="../public/js/vue/vue.js"></script>
+	<script src="../public/js/vue/vue-resource.js"></script>
+	<script src="../public/js/publicjs.js"></script>
+	<link rel="stylesheet" href="../public/css/reset.css">
+	<link rel="stylesheet" href="../public/css/samecss.css">
+	<link rel="stylesheet" href="../css/welcome.css">
+	<script>
+		/*document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5  < 128/3 ? 128/3 : document.documentElement.clientWidth / 7.5 + 'px';
+		window.onresize = function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5  < 128/3 ? 128/3 : document.documentElement.clientWidth / 7.5 + 'px';
+		}
+		console.log(document.documentElement.style.fontSize);*/
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75  < 64/3 ? 64/3 : document.documentElement.clientWidth / 3.75 + 'px';
+		window.onresize = function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75  < 64/3 ? 64/3 : document.documentElement.clientWidth / 3.75 + 'px';
+		}
+		console.log(document.documentElement.style.fontSize);
+	</script>
+</head>
+<body>
+<div id="appbox">
+	<a class="goback" href="javascript:history.go(-1)"></a>
+	<div class="imgbox">
+		<img src="../images/applogo.png" alt="">
+	</div>
+	<p class="title font24 text-grey255">欢迎来到透明农庄</p>
+	<a href="javascript:void(0)" @click="gotologinpage" class="btnlink text-center font16">登陆</a>
+	<a href="javascript:void(0)" @click="gotoregistpage" class="btnlink text-center font16">注册</a>
+	<span class="font12 text-grey255">注册账号即代表我同意透明农庄的服务条款、支付服务条款、隐
+私政策。我的信息将按照中国的相关法律法规储存和处理，包括
+隐私及信息披露条款。</span>
+</div>
+<script src="../js/welcome.js"></script>
+</body>
+</html>

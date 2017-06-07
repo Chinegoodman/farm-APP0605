@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>手机号注册</title>
+	<script src="../public/js/jquery.min.js"></script>
+	<script src="../public/js/vue/vue.js"></script>
+	<script src="../public/js/vue/vue-resource.js"></script>
+	<script src="../public/js/publicjs.js"></script>
+	<link rel="stylesheet" href="../public/css/reset.css">
+	<link rel="stylesheet" href="../public/css/samecss.css">
+	<link rel="stylesheet" href="../css/registphonemsg.css">
+	<script>
+		/*document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5  < 128/3 ? 128/3 : document.documentElement.clientWidth / 7.5 + 'px';
+		window.onresize = function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5  < 128/3 ? 128/3 : document.documentElement.clientWidth / 7.5 + 'px';
+		}
+		console.log(document.documentElement.style.fontSize);*/
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75  < 64/3 ? 64/3 : document.documentElement.clientWidth / 3.75 + 'px';
+		window.onresize = function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75  < 64/3 ? 64/3 : document.documentElement.clientWidth / 3.75 + 'px';
+		}
+		console.log(document.documentElement.style.fontSize);
+	</script>
+</head>
+<body>
+<div id="appbox">
+	<a class="goback" href="javascript:history.go(-1)"></a>
+	<p class="title font24 text-grey255">输入您的验证码</p>
+	<p class="registtips font15 text-grey255">我们向&nbsp;{{mobilenumber}}&nbsp;发送了一个验证码，请在下
+		方输入验证码</p>
+	<div class="iptbox">
+		<p class="font13 text-grey255">验证码</p>
+		<input type="text" class="text-grey255" v-model="registphonemsg">
+	</div>
+	<div id="submitbtnbox">
+		<div id="submitbtn" :class="{waitingclick:checkruler1status}" @click="registsubmitphonenumberclick"></div>
+	</div>
+</div>
+<script src="../js/registphonemsg.js"></script>
+</body>
+</html>

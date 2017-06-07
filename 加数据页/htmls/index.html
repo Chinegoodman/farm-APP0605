@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>首页</title>
+	<script src="../public/js/jquery.min.js"></script>
+	<script src="../public/js/vue/vue.js"></script>
+	<script src="../public/swiper/swiper-3.4.2.min.js"></script>
+	<script src="../public/js/vue/vue-resource.js"></script>
+	<script src="../public/js/publicjs.js"></script>
+	<link rel="stylesheet" href="../public/css/reset.css">
+	<link rel="stylesheet" href="../public/css/samecss.css">
+	<link rel="stylesheet" href="../public/swiper/swiper-3.4.2.min.css">
+	<link rel="stylesheet" href="../css/index.css">
+	<script>
+		/*document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5  < 128/3 ? 128/3 : document.documentElement.clientWidth / 7.5 + 'px';
+		window.onresize = function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5  < 128/3 ? 128/3 : document.documentElement.clientWidth / 7.5 + 'px';
+		}
+		console.log(document.documentElement.style.fontSize);*/
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75  < 64/3 ? 64/3 : document.documentElement.clientWidth / 3.75 + 'px';
+		window.onresize = function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75  < 64/3 ? 64/3 : document.documentElement.clientWidth / 3.75 + 'px';
+		}
+		console.log(document.documentElement.style.fontSize);
+	</script>
+</head>
+<body>
+<div id="appbox">
+	<!--顶部大图滚动-->
+	<header>
+		<div id="headerswiper" class="swiper-container clearfloat">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide" v-for="item in swiperdata"><a href="javascript:void (0)"><img :src="item.address" alt=""></a></div>
+				<!--<div class="swiper-slide"><a href="javascript:void (0)"><img src="../images/headerswiper1.png" alt=""></a></div>-->
+				<!--<div class="swiper-slide"><a href="javascript:void (0)"><img src="../images/headerswiper1.png" alt=""></a></div>-->
+			</div>
+			<!-- 如果需要分页器 -->
+			<!--<div class="swiper-pagination"></div>-->
+
+			<!-- 如果需要导航按钮 -->
+			<!--<div class="swiper-button-prev"></div>-->
+			<!--<div class="swiper-button-next"></div>-->
+
+			<!-- 如果需要滚动条 -->
+			<!--<div class="swiper-scrollbar"></div>-->
+			<div id="headercontentbox">
+				<div id="headerboxaddress">
+					<img src="../images/mapaddress255.png" alt="地点">
+					<span class="text-grey255 font13">北京</span>
+				</div>
+				<div id="headersearchbox">
+					<input type="text" placeholder="搜索你要的商品">
+				</div>
+				<div id="headercaremabtn">
+					<img src="../images/scan255.png" alt="headercaremabtn">
+				</div>
+			</div>
+		</div>
+	</header>
+	<!--内容部分-->
+	<div id="contentbox" class="clearfloat">
+		<div id="bankuailinks">
+			<a href="javascript:void (0)" @click="gotolink(item.id)" v-for="item in nongchanglisdata" :farmid="item.id">
+				<img :src="item.logo" alt="">
+				<p class="text-black97">{{item.name}}</p>
+			</a>
+			<!--<a href="javascript:void (0)">
+				<img src="../images/bankuailinkimg.png" alt="">
+				<p class="text-black97">云农场</p>
+			</a>
+			<a href="javascript:void (0)">
+				<img src="../images/bankuailinkimg.png" alt="">
+				<p class="text-black97">云农场</p>
+			</a>
+			<a href="javascript:void (0)">
+				<img src="../images/bankuailinkimg.png" alt="">
+				<p class="text-black97">云农场</p>
+			</a>-->
+		</div>
+		<ul id="contentlis">
+			<!--代养套餐-->
+			<li class="contentli" v-for="item in contentlisdatatop2">
+				<div class="contentlitop">
+					<div class="litoptitle">
+						<div class="litoptitleleft floatleft">
+							<img class="floatleft" :src="item.icon" alt="icon">
+							<p class="floatleft font18 text-black24">{{item.typename}}</p>
+						</div>
+						<div class="floatright text-black97 font12 morecssroot morecss" @click="gotonewlink(item.typeid)">更多</div>
+					</div>
+				</div>
+				<div class="contentlicontentbox">
+					<div class="scrollxbox">
+						<ul class="contentlicontent">
+							<li class="contentlicontentlis floatleft" v-for="item2 in item.list">
+								<a class="contentlicontentli" href="javascript:void (0)" :wupinid="item2.id" @click="gotosubpage(item2.id)">
+									<div class="contentlicontentliimg">
+										<img :src="item2.thumb" alt="">
+									</div>
+									<p class="text-black24 font14">{{item2.name}}</p>
+									<span class="font13 text-black115">{{item2.des}}</span>
+									<div class="contentlicontentliprice text-red222">￥{{item2.price}}元/套</div>
+								</a>
+							</li>
+
+							<!--<li class="contentlicontentlis floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222">￥499元/套</div>
+								</a>
+							</li>
+							<li class="contentlicontentlis floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222">￥499元/套</div>
+								</a>
+							</li>
+							<li class="contentlicontentlis floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222">￥499元/套</div>
+								</a>
+							</li>
+							<li class="contentlicontentlis floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222">￥499元/套</div>
+								</a>
+							</li>-->
+						</ul>
+					</div>
+				</div>
+			</li>
+
+			<!--代养套餐-->
+			<!--<li class="contentli">
+				<div class="contentlitop">
+					<div class="litoptitle">
+						<div class="litoptitleleft floatleft">
+							<img class="floatleft" src="../images/fenleiicon.png" alt="icon">
+							<p class="floatleft font18 text-black24">代养套餐</p>
+						</div>
+						<div class="floatright text-black97 font12 morecssroot morecss">更多</div>
+					</div>
+				</div>
+				<div class="contentlicontentbox">
+					<div class="scrollxbox">
+						<ul class="contentlicontent">
+							<li class="contentlicontentlis floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222">￥499元/套</div>
+								</a>
+							</li>
+
+							<li class="contentlicontentlis floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222">￥499元/套</div>
+								</a>
+							</li>
+							<li class="contentlicontentlis floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222">￥499元/套</div>
+								</a>
+							</li>
+							<li class="contentlicontentlis floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222">￥499元/套</div>
+								</a>
+							</li>
+							<li class="contentlicontentlis floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222">￥499元/套</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</li>-->
+
+			<!--高端定制-->
+			<!--<li class="contentli">
+				<div class="contentlitop">
+					<div class="litoptitle">
+						<div class="litoptitleleft floatleft">
+							<img class="floatleft" src="../images/fenleiicon.png" alt="icon">
+							<p class="floatleft font18 text-black24">高端定制</p>
+						</div>
+						<div class="floatright text-black97 font12 morecss">更多</div>
+					</div>
+				</div>
+				<div class="contentlicontentbox">
+					<div class="scrollxbox">
+						<ul class="contentlicontent">
+							<li class="contentlicontentlis floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222">￥499元/套</div>
+								</a>
+							</li>
+
+							<li class="contentlicontentlis floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222">￥499元/套</div>
+								</a>
+							</li>
+							<li class="contentlicontentlis floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222">￥499元/套</div>
+								</a>
+							</li>
+							<li class="contentlicontentlis floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222">￥499元/套</div>
+								</a>
+							</li>
+							<li class="contentlicontentlis floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222">￥499元/套</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</li>-->
+			<!--上部为两个大图框-->
+
+
+			<!--下边为多个小图框-->
+			<!--contentli2仅仅为了标记-->
+			<!--肉禽蛋类-->
+			<li class="contentli contentli2" v-for="item in contentlisdataothers">
+				<div class="contentlitop">
+					<div class="litoptitle">
+						<div class="litoptitleleft floatleft">
+							<img class="floatleft" :src="item.icon" alt="icon">
+							<p class="floatleft font18 text-black24">{{item.typename}}</p>
+						</div>
+						<div class="floatright text-black97 font12 morecssroot morecss" @click="gotonewlink(item.typeid)">更多</div>
+					</div>
+				</div>
+				<div class="contentlicontentbox2">
+					<div class="scrollxbox2">
+						<ul class="contentlicontent2">
+							<li class="contentlicontentlis2 floatleft" v-for="item2 in item.list">
+								<a class="contentlicontentli" href="javascript:void (0)" :wupinid="item2.id" @click="gotosubpage(item2.id)">
+									<div class="contentlicontentliimg">
+										<img :src="item2.thumb" alt="">
+									</div>
+									<p class="text-black24 font14 _textover">{{item2.name}}</p>
+									<span class="font13 text-black115 _textover">{{item2.des}}</span>
+									<div class="contentlicontentliprice text-red222 _textover">￥{{item2.price}}元/套</div>
+								</a>
+							</li>
+
+							<!--<li class="contentlicontentlis2 floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14 _textover">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115 _textover">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222 _textover">￥499元/套</div>
+								</a>
+							</li>
+							<li class="contentlicontentlis2 floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14 _textover">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115 _textover">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222 _textover">￥499元/套</div>
+								</a>
+							</li>
+							<li class="contentlicontentlis2 floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14 _textover">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115 _textover">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222 _textover">￥499元/套</div>
+								</a>
+							</li>
+							<li class="contentlicontentlis2 floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14 _textover">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115 _textover">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222 _textover">￥499元/套</div>
+								</a>
+							</li>-->
+						</ul>
+					</div>
+				</div>
+			</li>
+
+
+			<!--瓜果时蔬-->
+			<!--<li class="contentli contentli2">
+				<div class="contentlitop">
+					<div class="litoptitle">
+						<div class="litoptitleleft floatleft">
+							<img class="floatleft" src="../images/fenleiicon.png" alt="icon">
+							<p class="floatleft font18 text-black24">瓜果时蔬</p>
+						</div>
+						<div class="floatright text-black97 font12 morecssroot morecss">更多</div>
+					</div>
+				</div>
+				<div class="contentlicontentbox2">
+					<div class="scrollxbox2">
+						<ul class="contentlicontent2">
+							<li class="contentlicontentlis2 floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14 _textover">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115 _textover">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222 _textover">￥499元/套</div>
+								</a>
+							</li>
+
+							<li class="contentlicontentlis2 floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14 _textover">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115 _textover">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222 _textover">￥499元/套</div>
+								</a>
+							</li>
+							<li class="contentlicontentlis2 floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14 _textover">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115 _textover">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222 _textover">￥499元/套</div>
+								</a>
+							</li>
+							<li class="contentlicontentlis2 floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14 _textover">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115 _textover">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222 _textover">￥499元/套</div>
+								</a>
+							</li>
+							<li class="contentlicontentlis2 floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14 _textover">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115 _textover">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222 _textover">￥499元/套</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			&lt;!&ndash;收益转卖&ndash;&gt;
+			<li class="contentli contentli2">
+				<div class="contentlitop">
+					<div class="litoptitle">
+						<div class="litoptitleleft floatleft">
+							<img class="floatleft" src="../images/fenleiicon.png" alt="icon">
+							<p class="floatleft font18 text-black24">收益转卖</p>
+						</div>
+						<div class="floatright text-black97 font12 morecssroot morecss">更多</div>
+					</div>
+				</div>
+				<div class="contentlicontentbox2">
+					<div class="scrollxbox2">
+						<ul class="contentlicontent2">
+							<li class="contentlicontentlis2 floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14 _textover">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115 _textover">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222 _textover">￥499元/套</div>
+								</a>
+							</li>
+
+							<li class="contentlicontentlis2 floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14 _textover">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115 _textover">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222 _textover">￥499元/套</div>
+								</a>
+							</li>
+							<li class="contentlicontentlis2 floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14 _textover">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115 _textover">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222 _textover">￥499元/套</div>
+								</a>
+							</li>
+							<li class="contentlicontentlis2 floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14 _textover">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115 _textover">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222 _textover">￥499元/套</div>
+								</a>
+							</li>
+							<li class="contentlicontentlis2 floatleft">
+								<a class="contentlicontentli" href="javascript:void (0)">
+									<div class="contentlicontentliimg">
+										<img src="../images/daiyangtaocan.png" alt="">
+									</div>
+									<p class="text-black24 font14 _textover">春草农庄贵妃鸡蛋1+2套餐</p>
+									<span class="font13 text-black115 _textover">纯草农庄贵妃鸡1+2套餐</span>
+									<div class="contentlicontentliprice text-red222 _textover">￥499元/套</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</li>-->
+		</ul>
+	</div>
+	<footer>
+		<a href="index.html" class="select">
+			<img src="../images/indexselect.png" alt="">
+			<p class="text-black96">首页</p>
+		</a>
+		<a href="newpropage.html">
+			<img src="../images/news.png" alt="">
+			<p class="text-black96">新品</p>
+		</a>
+		<a href="promotionpage.html">
+			<img src="../images/activity.png" alt="">
+			<p class="text-black96">活动</p>
+		</a>
+		<a href="shoppingcartpage.html">
+			<img src="../images/shoppingcart.png" alt="">
+			<p class="text-black96">购物车</p>
+		</a>
+		<a href="javascript:void (0)" @click="iflogined">
+			<img src="../images/percenter.png" alt="">
+			<p class="text-black96">我的</p>
+		</a>
+	</footer>
+</div>
+<script src="../js/index.js"></script>
+<!--水平列表宽度设置-->
+<script>
+	window.onload=function () {
+		//商品列表大图的部分
+		for(var i=0;i<$('.contentlicontent').length;i++){
+			$('.contentlicontent').eq(i).width($('.contentlicontent').eq(i).children('.contentlicontentlis').outerWidth(true)*$('.contentlicontent').eq(i).children('.contentlicontentlis').length+25)
+		}
+
+		//商品列表小图的部分
+		for(var g=0;g<$('.contentlicontent2').length;g++){
+			$('.contentlicontent2').eq(g).width($('.contentlicontent2').eq(g).children('.contentlicontentlis2').outerWidth(true)*$('.contentlicontent2').eq(g).children('.contentlicontentlis2').length+25)
+		}
+
+		setTimeout(function () {
+			//商品列表大图的部分
+			for(var i=0;i<$('.contentlicontent').length;i++){
+				$('.contentlicontent').eq(i).width($('.contentlicontent').eq(i).children('.contentlicontentlis').outerWidth(true)*$('.contentlicontent').eq(i).children('.contentlicontentlis').length+25)
+			}
+
+			//商品列表小图的部分
+			for(var g=0;g<$('.contentlicontent2').length;g++){
+				$('.contentlicontent2').eq(g).width($('.contentlicontent2').eq(g).children('.contentlicontentlis2').outerWidth(true)*$('.contentlicontent2').eq(g).children('.contentlicontentlis2').length+25)
+			}
+		},500)
+	}
+	$(function () {
+
+
+	})
+</script>
+<!--swiper设置-->
+<script>
+	setTimeout(function () {
+		var headerswiper = new Swiper ('#headerswiper', {
+			direction: 'horizontal',
+			loop: true,
+			autoplay:2500,
+			// 如果需要分页器
+//		pagination: '.swiper-pagination',
+
+			// 如果需要前进后退按钮
+//		nextButton: '.swiper-button-next',
+//		prevButton: '.swiper-button-prev',
+
+			// 如果需要滚动条
+//		scrollbar: '.swiper-scrollbar',
+		})
+	},1500)
+</script>
+</body>
+</html>

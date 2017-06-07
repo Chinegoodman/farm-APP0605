@@ -1,0 +1,244 @@
+/*header部分*/
+header{
+	background:rgb(223,197,4); /* 一些不支持背景渐变的浏览器 */
+	background:-moz-linear-gradient(top, rgb(243,208,9), rgb(223,197,4));
+	background:-webkit-gradient(linear, 0 0, 0 bottom, from(rgb(243,208,9)), to(rgb(223,197,4)));
+	background:-o-linear-gradient(top, rgb(243,208,9), rgb(223,197,4));
+	height:0.64rem;
+	position: relative;
+}
+.gobackbtn{
+	position: absolute;
+	left:0.24rem;
+	top:0.36rem;
+	width:0.1rem;
+	/*height:0.26rem;*/
+	left:0.24rem;
+	top:0.36rem;
+	width:0.1rem;
+	height:0.21rem;
+}
+.morecss:before{
+	content: '';
+	position: absolute;
+	left:0rem;
+	top:0.05rem;
+
+	display: block;
+	width:0.12rem;
+	height:1px;
+	border:none;
+	background-color: rgb(97,97,97);
+	-webkit-transform: rotate(-46deg);
+	-moz-transform: rotate(-46deg);
+	-ms-transform: rotate(-46deg);
+	-o-transform: rotate(-46deg);
+	transform: rotate(-46deg);
+}
+.morecss:after{
+	content: '';
+	position: absolute;
+	left:0rem;
+	top:0.13rem;
+
+	display: block;
+	width:0.12rem;
+	height:1px;
+	border:none;
+	background-color: rgb(97,97,97);
+	-webkit-transform: rotate(46deg);
+	-moz-transform: rotate(46deg);
+	-ms-transform: rotate(46deg);
+	-o-transform: rotate(46deg);
+	transform: rotate(46deg);
+}
+header>p{
+	padding-top: 0.34rem;
+	line-height:0.21rem;
+	height:0.21rem;
+}
+/*header结束*/
+/*content开始*/
+.shangjiajihe{
+	padding-top: 0.24rem;
+	padding-bottom: 0.97rem;
+}
+.shangjiajihetitle{
+	height:0.25rem;
+	margin-bottom: 0.1rem;
+}
+.shangjiajihetitle>img{
+	width:0.16rem;
+	height:0.16rem;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-top: 0.05rem;
+	margin-right: 0.12rem;
+}
+.shangjiajihetitle>a{
+	display: block;
+	line-height: 0.25rem;
+	position: relative;
+	width:3.07rem;
+}
+.shangjiajihetitle>a.morecss:before {
+	content: '';
+	position: absolute;
+	left: auto;
+	right:0rem;
+	top: 0.05rem;
+	display: block;
+	width: 0.12rem;
+	height: 1px;
+	border: none;
+	background-color: rgb(97,97,97);
+	-webkit-transform: rotate(46deg);
+	-moz-transform: rotate(46deg);
+	-ms-transform: rotate(46deg);
+	-o-transform: rotate(46deg);
+	transform: rotate(46deg);
+}
+.shangjiajihetitle>a.morecss:after {
+	content: '';
+	position: absolute;
+	left: auto;
+	right: 0rem;
+	top: 0.13rem;
+	display: block;
+	width: 0.12rem;
+	height: 1px;
+	border: none;
+	background-color: rgb(97,97,97);
+	-webkit-transform: rotate(-46deg);
+	-moz-transform: rotate(-46deg);
+	-ms-transform: rotate(-46deg);
+	-o-transform: rotate(-46deg);
+	transform: rotate(-46deg);
+}
+.shangjiajihelibox{
+	height:0.76rem;
+	margin:0.1rem 0;
+}
+.shangjiajihelibox>img{
+	width:0.16rem;
+	height:0.16rem;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-top: 0.3rem;
+	margin-right: 0.12rem;
+}
+.shangjiajiheli>.imgbox{
+	width:0.76rem;
+	height:0.76rem;
+	overflow: hidden;
+	margin-right: 0.1rem;
+}
+.shangjiajiheli>.imgbox>img{
+	width:auto;
+	height:100%;
+}
+.shangpincontent{
+	position: relative;
+}
+.shangpincontent>p{
+	line-height: 0.17rem;
+	width:2.21rem;
+	height:0.46rem;
+}
+.shangpincontentbottom{
+	height:0.23rem;
+}
+.shangpincontentbottom>span{
+}
+.shangpinaddorsubtract{
+	width:1.07rem;
+	overflow: hidden;
+	outline:1px solid rgb(114,114,114);
+}
+.shangpinaddorsubtract>input{
+	border:none;
+	width:0.41rem;
+	height:0.23rem;
+	outline:1px solid rgb(114,114,114);
+	text-align: center;
+}
+.shangpinaddorsubtract>a{
+	width:0.33rem;
+	height:0.23rem;
+	text-align: center;
+	color: rgb(34,34,34);
+}
+.shangpinaddorsubtract>a.cantjian{
+	color: rgb(170,170,170);
+	outline:1px solid rgb(202,202,202);
+}
+.shangpindeletebtn{
+	position: absolute;
+	right:0;
+	top:0;
+	height:0.19rem;
+	width:auto;
+	background-color: #ccc;
+}
+.shangpindeletebtn>img{
+	display: block;
+	height:0.19rem;
+	width:auto;
+}
+
+
+
+
+/*content结束*/
+
+
+/*下单条开始*/
+#makeadeal{
+	position: fixed;
+	bottom:0.5rem;
+	left:0;
+	width:3.55rem;
+	height:0.47rem;
+	background-color: #fff;
+
+	-webkit-box-shadow: 0 0 1px 1px #E7E7E7;
+	-moz-box-shadow: 0 0 1px 1px #E7E7E7;
+	box-shadow: 0 0 1px 1px #E7E7E7;
+}
+#makeadeal>.floatleft>img{
+	width:0.16rem;
+	height:0.16rem;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-top: 0.16rem;
+	margin-right: 0.08rem;
+}
+#makeadeal>.floatleft>p{
+	height:0.47rem;
+	line-height: 0.47rem;
+}
+
+#makeadeal>.floatright *{
+	display: block;
+	height:0.47rem;
+	line-height:0.47rem;
+}
+#makeadeal>.floatright>p{
+	width:1.3rem;
+}
+#makeadeal>.floatright>p>*{
+	/*float: left;*/
+	float: right;
+}
+#makeadealbtn{
+	width:1.16rem;
+	margin-left: 0.18rem;
+	background-color: rgb(243,208,90);
+}
+/*下单条结束*/
+
+
+
+.deleteproductbg{
+	display: none;
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>活动</title>
+	<script src="../public/js/jquery.min.js"></script>
+	<script src="../public/js/vue/vue.js"></script>
+	<script src="../public/swiper/swiper-3.4.2.min.js"></script>
+	<script src="../public/js/vue/vue-resource.js"></script>
+	<script src="../public/js/publicjs.js"></script>
+	<link rel="stylesheet" href="../public/css/reset.css">
+	<link rel="stylesheet" href="../public/css/samecss.css">
+	<link rel="stylesheet" href="../public/swiper/swiper-3.4.2.min.css">
+	<link rel="stylesheet" href="../css/promotionpage.css">
+	<script>
+		/*document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5  < 128/3 ? 128/3 : document.documentElement.clientWidth / 7.5 + 'px';
+		window.onresize = function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5  < 128/3 ? 128/3 : document.documentElement.clientWidth / 7.5 + 'px';
+		}
+		console.log(document.documentElement.style.fontSize);*/
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75  < 64/3 ? 64/3 : document.documentElement.clientWidth / 3.75 + 'px';
+		window.onresize = function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75  < 64/3 ? 64/3 : document.documentElement.clientWidth / 3.75 + 'px';
+		}
+		console.log(document.documentElement.style.fontSize);
+	</script>
+</head>
+<body>
+<div id="appbox">
+	<!--顶部header-->
+	<header>
+		<div id="headerswiper" class="swiper-container clearfloat">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><a href="javascript:void (0)"><img src="../images/headerswiper1.png" alt=""></a></div>
+				<div class="swiper-slide"><a href="javascript:void (0)"><img src="../images/headerswiper1.png" alt=""></a></div>
+				<div class="swiper-slide"><a href="javascript:void (0)"><img src="../images/headerswiper1.png" alt=""></a></div>
+			</div>
+			<!-- 如果需要分页器 -->
+			<!--<div class="swiper-pagination"></div>-->
+
+			<!-- 如果需要导航按钮 -->
+			<!--<div class="swiper-button-prev"></div>-->
+			<!--<div class="swiper-button-next"></div>-->
+
+			<!-- 如果需要滚动条 -->
+			<!--<div class="swiper-scrollbar"></div>-->
+			<div id="headercontentbox">
+				<div id="headerboxaddress">
+					<img src="../images/headeraddress.png" alt="地点">
+					<span class="text-grey255 font13">北京</span>
+				</div>
+				<div id="headersearchbox">
+					<input type="text" placeholder="搜索你要的商品">
+				</div>
+				<div id="headercaremabtn">
+					<img src="../images/headercaremabtn.png" alt="headercaremabtn">
+				</div>
+			</div>
+		</div>
+	</header>
+	<!--内容部分-->
+	<div id="content">
+		<!--优惠专区-->
+		<div class="contentblock">
+			<p class="text-black24 font18">优惠专区</p>
+			<ul class="contentblocklis clearfloat">
+				<li class="floatleft height100 contentli1">
+					<p class="text-black24 font13 text-left">周六也半价</p>
+					<span class="text-black24 font11 text-center">劲爆折扣就在今天</span>
+					<img src="" alt="梨">
+				</li>
+				<li class="floatleft height50 contentli2">
+					<p class="text-black24 font13">29.9元专享</p>
+					<span class="text-black24 font11">精挑细选</span>
+					<img src="" alt="玉米">
+				</li>
+				<li class="floatleft height50 contentli3">
+					<p class="text-black24 font13">超值折扣</p>
+					<img src="" alt="鸡蛋">
+				</li>
+				<li class="floatleft height50 contentli4">
+					<p class="text-black24 font13">口碑排行</p>
+					<img src="" alt="白菜">
+				</li>
+			</ul>
+		</div>
+		<!--积分专区-->
+		<div class="contentblock">
+			<p class="text-black24 font18">积分专区</p>
+			<ul class="contentblocklis clearfloat contentblocklisjifen">
+				<li class="floatleft height50 contentli21 width50">
+					<p class="text-black24 font13 text-center">注册送<span class="font18">100</span>积分</p>
+				</li>
+				<li class="floatleft height50 contentli22 width50">
+					<p class="text-black24 font13 text-center">认证送<span class="font18">500</span>积分</p>
+				</li>
+				<li class="floatleft height50 contentli23 width50">
+					<p class="text-black24 font13 text-center">申请高级用户<br>送<span class="font18">1000</span>积分</p>
+				</li>
+				<li class="floatleft height50 contentli24 width50">
+					<p class="text-black24 font13 text-center">邀请好友注册有礼</p>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+	<!--footer部分-->
+	<footer>
+		<a href="">
+			<img src="../images/fenleiicon.png" alt="">
+			<p class="text-black96">首页</p>
+		</a>
+		<a href="">
+			<img src="../images/fenleiicon.png" alt="">
+			<p class="text-black96">新品</p>
+		</a>
+		<a href="" class="select">
+			<img src="../images/fenleiiconselect.png" alt="">
+			<p class="text-black96">活动</p>
+		</a>
+		<a href="">
+			<img src="../images/fenleiicon.png" alt="">
+			<p class="text-black96">购物车</p>
+		</a>
+		<a href="">
+			<img src="../images/fenleiicon.png" alt="">
+			<p class="text-black96">我的</p>
+		</a>
+	</footer>
+</div>
+<script src="../js/promotionpage.js"></script>
+<!--swiper设置-->
+<script>
+	var headerswiper = new Swiper ('#headerswiper', {
+		direction: 'horizontal',
+		loop: true,
+		autoplay:2500,
+		// 如果需要分页器
+//		pagination: '.swiper-pagination',
+
+		// 如果需要前进后退按钮
+//		nextButton: '.swiper-button-next',
+//		prevButton: '.swiper-button-prev',
+
+		// 如果需要滚动条
+//		scrollbar: '.swiper-scrollbar',
+	})
+</script>
+</body>
+</html>

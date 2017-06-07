@@ -1,0 +1,183 @@
+
+/*内容部分content*/
+/*板块*/
+#bankuailinks{
+	padding:0.14rem 0 0.24rem;
+	display: flex;
+	justify-content: space-around;
+}
+#bankuailinks>a{
+	display: block;
+}
+#bankuailinks>a{
+	height:0.51rem;
+}
+#bankuailinks>a>img{
+	margin-bottom: 0.01rem;
+	height:0.33rem;
+	width:auto;
+	margin:0 auto;
+}
+#bankuailinks>a>p{
+	line-height: 0.17rem;
+	font-size: 12px;
+	text-align: center;
+}
+
+#contentbox{
+	padding-bottom: 0.6rem;
+}
+#contentlis{
+	padding-left: 0.2rem;
+}
+.contentli{
+	margin-bottom: 0.27rem;
+}
+.contentli:last-child{
+	margin-bottom: 0;
+}
+
+.litoptitle{
+	height:0.25rem;
+	padding-right:0.2rem;
+	margin-bottom: 0.1rem;
+}
+.litoptitleleft{}
+.litoptitleleft>img{
+	height:0.25rem;
+	width:auto;
+	margin-right: 0.03rem;
+}
+.litoptitleleft>p{
+	line-height:0.25rem;
+}
+.litoptitle>.floatright{
+	line-height:0.25rem;
+}
+.morecssroot{
+	padding-right: 0.18rem;
+	position: relative;
+}
+.morecss:before{
+	content: '';
+	position: absolute;
+	right:0.05rem;
+	top:0.075rem;
+
+	display: block;
+	width:0.12rem;
+	height:1px;
+	border:none;
+	background-color: rgb(97,97,97);
+	-webkit-transform: rotate(46deg);
+	-moz-transform: rotate(46deg);
+	-ms-transform: rotate(46deg);
+	-o-transform: rotate(46deg);
+	transform: rotate(46deg);
+}
+.morecss:after{
+	content: '';
+	position: absolute;
+	right:0.05rem;
+	bottom:0.075rem;
+
+	display: block;
+	width:0.12rem;
+	height:1px;
+	border:none;
+	background-color: rgb(97,97,97);
+	-webkit-transform: rotate(-46deg);
+	-moz-transform: rotate(-46deg);
+	-ms-transform: rotate(-46deg);
+	-o-transform: rotate(-46deg);
+	transform: rotate(-46deg);
+}
+.contentlicontentbox{
+	width:3.55rem;
+	height:2.45rem;
+	overflow: hidden;
+}
+.scrollxbox{
+	width:3.55rem;
+	height:2.45rem;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	padding-bottom: 20px;
+
+
+	/*scroll流畅*/
+	-webkit-overflow-scrolling: touch;
+}
+.contentlicontent{
+	min-width:3.55rem;
+	height:2.45rem;
+	width:30000px;
+}
+.contentlicontentlis{
+	width:3.35rem;
+	height:2.45rem;
+	margin-right: 0.09rem;
+}
+.contentlicontentlis:last-child{
+	padding-right: 0.2rem;
+}
+.contentlicontentli{
+	display: block;
+}
+.contentlicontentliimg{
+	/*width:100%;
+	height:100%;*/
+	width:3.35rem;
+	height:1.88rem;
+	overflow: hidden;
+	margin-bottom: 0.06rem;
+}
+.contentlicontentliimg>img{
+	width:100%;
+	height:auto;
+}
+.contentlicontentli>p{
+	margin-bottom: 0.01rem;
+	line-height: 0.15rem;
+}
+.contentlicontentli>span{
+	margin-bottom: 0.04rem;
+	line-height: 0.15rem;
+}
+
+
+/*小图列表设置*/
+.contentlicontentbox2 .contentlicontentliimg{
+	width:1.63rem;
+	height:0.92rem;
+}
+.contentlicontentbox2{
+	width:100%;
+	height:1.49rem;
+	overflow: hidden;
+}
+.scrollxbox2{
+	width:100%;
+	height:1.49rem;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	padding-bottom: 20px;
+}
+.contentlicontent2{
+	min-width:1.63rem;
+	height:1.49rem;
+	width:3000px;
+}
+.contentlicontentlis2{
+	width:1.63rem;
+	height:1.49rem;
+	margin-right: 0.09rem;
+}
+
+
+
+
+/*
+.contentlicontent---117行
+.contentlicontent2---226行
+宽度根据js动态设置*/

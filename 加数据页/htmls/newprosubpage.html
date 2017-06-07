@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>首页-农庄</title>
+	<script src="../public/js/jquery.min.js"></script>
+	<script src="../public/swiper/swiper-3.4.2.min.js"></script>
+	<script src="../public/js/vue/vue.js"></script>
+	<script src="../public/js/vue/vue-resource.js"></script>
+	<script src="../public/js/publicjs.js"></script>
+	<link rel="stylesheet" href="../public/css/reset.css">
+	<link rel="stylesheet" href="../public/swiper/swiper-3.4.2.min.css">
+	<link rel="stylesheet" href="../public/css/samecss.css">
+	<link rel="stylesheet" href="../css/newprosubpage.css">
+	<script>
+		/*document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5  < 128/3 ? 128/3 : document.documentElement.clientWidth / 7.5 + 'px';
+		 window.onresize = function(){
+		 document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5  < 128/3 ? 128/3 : document.documentElement.clientWidth / 7.5 + 'px';
+		 }
+		 console.log(document.documentElement.style.fontSize);*/
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75  < 64/3 ? 64/3 : document.documentElement.clientWidth / 3.75 + 'px';
+		window.onresize = function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75  < 64/3 ? 64/3 : document.documentElement.clientWidth / 3.75 + 'px';
+		}
+		console.log(document.documentElement.style.fontSize);
+	</script>
+</head>
+<body>
+<div id="appbox">
+	<!--顶部header-->
+	<header>
+		<a class="gobackbtn morecss" href="javascript:history.go(-1);" title="goback"></a>
+		<p class="font15 text-black24 text-center">纯草农庄</p>
+		<!--<div class="imgbox"><img src="../images/share000.png" alt=""></div>-->
+	</header>
+	<!--头部结束-->
+
+	<div id="content">
+		<!-- Swiper -->
+		<div id="contentswiper1" class="swiper-container">
+			<!--<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="swiperslidecontent">
+						&lt;!&ndash;16:9&ndash;&gt;
+						&lt;!&ndash;<video src=""  controls poster="../images/594x334.jpg"></video>&ndash;&gt;
+						<img src="../images/594x334.jpg" alt="">
+					</div>
+				</div>
+
+				&lt;!&ndash;<div class="swiper-slide">
+					<div class="swiperslidecontent">
+						&lt;!&ndash;16:9&ndash;&gt;
+						<video src=""  controls poster="../images/594x334.jpg"></video>
+						<img src="../images/594x334.jpg" alt="">
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="swiperslidecontent">
+						&lt;!&ndash;16:9&ndash;&gt;
+						<video src=""  controls poster="../images/594x334.jpg"></video>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="swiperslidecontent">
+						&lt;!&ndash;16:9&ndash;&gt;
+						<video src=""  controls poster="../images/594x334.jpg"></video>
+					</div>
+				</div>&ndash;&gt;
+			</div>-->
+			<!-- Add Pagination -->
+			<!--<div class="swiper-pagination"></div>-->
+			<!--<div class="swiper-scrollbar"></div>-->
+			<img :src="appdata.typethumb" alt="">
+		</div>
+		<div id="contentothers">
+			<!--<div class="contenttop">
+				<p class="font18 text-black24">农庄简介</p>
+				<span class="font14 text-black24">
+					纯草农庄创建于2011年4月，位于素有“天然氧吧”之称的河北省永清县。秉持“一切只为孩子健康”的理念，农庄不使用转基因种子，不使用化学农药、化肥、生长激素、除草剂。目前，农庄占地170余亩，划分为贵妃鸡养殖区和果蔬种植区，主要产品包括香草贵妃鸡(蛋)，水果(杏、桃、李子、葡萄等)，以及全年100多种时令蔬菜。
+				</span>
+			</div>-->
+			<div class="contentproduct">
+				<p class="font18 text-black24">{{appdata.typename}}</p>
+				<ul class="contentproductlis clearfloat">
+					<li class="contentproductli floatleft" v-for="item in appdata.list" @click="gotolink(item.id)">
+						<div class="imgbox">
+							<img :src="item.thumb" alt="产品">
+						</div>
+						<p class="font14 text-black24 _textover">{{item.name}}</p>
+						<span class="font13 text-black115 _textover">{{item.des}}</span>
+						<div class="price font12 text-red222">￥{{item.price}}/{{item.unit}}</div>
+					</li>
+
+
+					<!--<li class="contentproductli floatleft">
+						<div class="imgbox">
+							<img src="../images/daiyangtaocan.png" alt="产品">
+						</div>
+						<p class="font14 text-black24 _textover">纯草农庄贵妃鸡1+2套餐</p>
+						<span class="font13 text-black115 _textover">敢给孩子吃的蛋和鸡</span>
+						<div class="price font12 text-red222">￥499/套</div>
+					</li>
+					<li class="contentproductli floatleft">
+						<div class="imgbox">
+							<img src="../images/daiyangtaocan.png" alt="产品">
+						</div>
+						<p class="font14 text-black24 _textover">纯草农庄贵妃鸡1+2套餐</p>
+						<span class="font13 text-black115 _textover">敢给孩子吃的蛋和鸡</span>
+						<div class="price font12 text-red222">￥499/套</div>
+					</li>
+					<li class="contentproductli floatleft">
+						<div class="imgbox">
+							<img src="../images/daiyangtaocan.png" alt="产品">
+						</div>
+						<p class="font14 text-black24 _textover">纯草农庄贵妃鸡1+2套餐</p>
+						<span class="font13 text-black115 _textover">敢给孩子吃的蛋和鸡</span>
+						<div class="price font12 text-red222">￥499/套</div>
+					</li>
+					<li class="contentproductli floatleft">
+						<div class="imgbox">
+							<img src="../images/daiyangtaocan.png" alt="产品">
+						</div>
+						<p class="font14 text-black24 _textover">纯草农庄贵妃鸡1+2套餐</p>
+						<span class="font13 text-black115 _textover">敢给孩子吃的蛋和鸡</span>
+						<div class="price font12 text-red222">￥499/套</div>
+					</li>-->
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--footer部分-->
+	<footer>
+		<a href="index.html" class="select">
+			<img src="../images/index.png" alt="">
+			<p class="text-black96">首页</p>
+		</a>
+		<a href="newpropage.html">
+			<img src="../images/newsselect.png" alt="">
+			<p class="text-black96">新品</p>
+		</a>
+		<a href="promotionpage.html">
+			<img src="../images/activity.png" alt="">
+			<p class="text-black96">活动</p>
+		</a>
+		<a href="shoppingcartpage.html">
+			<img src="../images/shoppingcart.png" alt="">
+			<p class="text-black96">购物车</p>
+		</a>
+		<a href="javascript:void (0)" @click="iflogined">
+			<img src="../images/percenter.png" alt="">
+			<p class="text-black96">我的</p>
+		</a>
+	</footer>
+</div>
+<script src="../js/newprosubpage.js"></script>
+
+<script>
+	/*setTimeout(function () {
+		var swiper = new Swiper('#contentswiper1', {
+			pagination: '.swiper-pagination',
+			slidesPerView: 1.6,
+			centeredSlides: true,
+			paginationClickable: true,
+			spaceBetween: 5,
+			loop:true,
+			// 如果需要滚动条
+//		scrollbar: '.swiper-scrollbar',
+		});
+	},300)*/
+</script>
+</body>
+</html>

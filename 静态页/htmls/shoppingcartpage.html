@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>购物车</title>
+	<script src="../public/js/jquery.min.js"></script>
+	<script src="../public/js/vue/vue.js"></script>
+	<script src="../public/js/vue/vue-resource.js"></script>
+	<script src="../public/js/publicjs.js"></script>
+	<link rel="stylesheet" href="../public/css/reset.css">
+	<link rel="stylesheet" href="../public/css/samecss.css">
+	<link rel="stylesheet" href="../css/shoppingcartpage.css">
+	<script>
+		/*document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5  < 128/3 ? 128/3 : document.documentElement.clientWidth / 7.5 + 'px';
+		window.onresize = function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5  < 128/3 ? 128/3 : document.documentElement.clientWidth / 7.5 + 'px';
+		}
+		console.log(document.documentElement.style.fontSize);*/
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75  < 64/3 ? 64/3 : document.documentElement.clientWidth / 3.75 + 'px';
+		window.onresize = function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75  < 64/3 ? 64/3 : document.documentElement.clientWidth / 3.75 + 'px';
+		}
+		console.log(document.documentElement.style.fontSize);
+	</script>
+</head>
+<body>
+<div id="appbox">
+	<header>
+		<a class="gobackbtn morecss" href="javascript:history.go(-1);" title="goback"></a>
+		<p class="font15 text-black24 text-center">购物车</p>
+	</header>
+	<!--头部结束-->
+	<!--内容部分开始-->
+	<div class="shangjiajihe paddingleft20">
+		<!--春草农庄-->
+		<div class="shangjiabox">
+			<div class="shangjiajihetitle clearfloat">
+				<img class="floatleft" src="../images/notselectpoint.png" alt="">
+				<a href="" class="font18 text-black24 floatleft morecss">纯草农庄</a>
+			</div>
+			<ul class="shangjiajihelis">
+				<li class="shangjiajihelibox">
+					<img class="floatleft" src="../images/notselectpoint.png" alt="">
+					<div class="shangjiajiheli clearfloat">
+						<div class="imgbox floatleft">
+							<img src="../images/daiyangtaocan.png" alt="商品">
+						</div>
+						<div class="shangpincontent floatleft">
+							<p class="font14 text-black34 _textover">贵妃鸡初产蛋10枚</p>
+							<div class="shangpincontentbottom clearfloat">
+								<span class="font13 text-red222 floatleft">￥49.00/套</span>
+								<div class="shangpinaddorsubtract floatright">
+									<a class="shangpinadd floatleft" href="">-</a>
+									<input class="floatleft" type="number" value="1">
+									<a class="shangpinsubtract floatleft" href="">+</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+
+
+				<li class="shangjiajihelibox">
+					<img class="floatleft" src="../images/notselectpoint.png" alt="">
+					<div class="shangjiajiheli clearfloat">
+						<div class="imgbox floatleft">
+							<img src="../images/daiyangtaocan.png" alt="商品">
+						</div>
+						<div class="shangpincontent floatleft">
+							<p class="font14 text-black34 _textover">贵妃鸡初产蛋10枚</p>
+							<div class="shangpincontentbottom clearfloat">
+								<span class="font13 text-red222 floatleft">￥49.00/套</span>
+								<div class="shangpinaddorsubtract floatright">
+									<a class="shangpinadd floatleft" href="">-</a>
+									<input class="floatleft" type="number" value="1">
+									<a class="shangpinsubtract floatleft" href="">+</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="shangjiajihelibox">
+					<img class="floatleft" src="../images/notselectpoint.png" alt="">
+					<div class="shangjiajiheli clearfloat">
+						<div class="imgbox floatleft">
+							<img src="../images/daiyangtaocan.png" alt="商品">
+						</div>
+						<div class="shangpincontent floatleft">
+							<p class="font14 text-black34 _textover">贵妃鸡初产蛋10枚</p>
+							<div class="shangpincontentbottom clearfloat">
+								<span class="font13 text-red222 floatleft">￥49.00/套</span>
+								<div class="shangpinaddorsubtract floatright">
+									<a class="shangpinadd floatleft" href="">-</a>
+									<input class="floatleft" type="number" value="1">
+									<a class="shangpinsubtract floatleft" href="">+</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+
+		</div>
+
+		<!--农家乐-->
+		<div class="shangjiabox">
+			<div class="shangjiajihetitle clearfloat">
+				<img class="floatleft" src="../images/notselectpoint.png" alt="">
+				<a href="" class="font18 text-black24 floatleft morecss">农家乐</a>
+			</div>
+			<ul class="shangjiajihelis">
+				<li class="shangjiajihelibox">
+					<img class="floatleft" src="../images/notselectpoint.png" alt="">
+					<div class="shangjiajiheli clearfloat">
+						<div class="imgbox floatleft">
+							<img src="../images/daiyangtaocan.png" alt="商品">
+						</div>
+						<div class="shangpincontent floatleft">
+							<p class="font14 text-black34 _textover">农家乐新鲜采摘白心火龙果</p>
+							<div class="shangpincontentbottom clearfloat">
+								<span class="font13 text-red222 floatleft">￥69.00/套</span>
+								<div class="shangpinaddorsubtract floatright">
+									<a class="shangpinadd floatleft" href="">-</a>
+									<input class="floatleft" type="number" value="1">
+									<a class="shangpinsubtract floatleft" href="">+</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+
+
+				<li class="shangjiajihelibox">
+					<img class="floatleft" src="../images/notselectpoint.png" alt="">
+					<div class="shangjiajiheli clearfloat">
+						<div class="imgbox floatleft">
+							<img src="../images/daiyangtaocan.png" alt="商品">
+						</div>
+						<div class="shangpincontent floatleft">
+							<p class="font14 text-black34 _textover">农家乐新鲜采摘白心火龙果</p>
+							<div class="shangpincontentbottom clearfloat">
+								<span class="font13 text-red222 floatleft">￥449.00/套</span>
+								<div class="shangpinaddorsubtract floatright">
+									<a class="shangpinadd floatleft" href="">-</a>
+									<input class="floatleft" type="number" value="1">
+									<a class="shangpinsubtract floatleft" href="">+</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="shangjiajihelibox">
+					<img class="floatleft" src="../images/notselectpoint.png" alt="">
+					<div class="shangjiajiheli clearfloat">
+						<div class="imgbox floatleft">
+							<img src="../images/daiyangtaocan.png" alt="商品">
+						</div>
+						<div class="shangpincontent floatleft">
+							<p class="font14 text-black34 _textover">农家乐新鲜采摘白心火龙果</p>
+							<div class="shangpincontentbottom clearfloat">
+								<span class="font13 text-red222 floatleft">￥85.00/套</span>
+								<div class="shangpinaddorsubtract floatright">
+									<a class="shangpinadd floatleft" href="">-</a>
+									<input class="floatleft" type="number" value="1">
+									<a class="shangpinsubtract floatleft" href="">+</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+	<!--底部确认下单-->
+	<div id="makeadeal" class="paddingleft20 clearfloat">
+		<div class="floatleft">
+			<img class="floatleft" src="../images/notselectpoint.png" alt="">
+			<p class="font14 text-black70 floatleft">全部选中</p>
+		</div>
+		<div class="floatright">
+			<p class="font14 text-black90 floatleft"><span class="font14 text-black90">合计： </span><span class="font14 text-red211">￥0.00</span></p>
+			<div id="makeadealbtn" class="font14 text-black24 floatleft text-center">下单</div>
+		</div>
+	</div>
+	<!--footer部分-->
+	<footer>
+		<a href="">
+			<img src="../images/fenleiicon.png" alt="">
+			<p class="text-black96">首页</p>
+		</a>
+		<a href="">
+			<img src="../images/fenleiicon.png" alt="">
+			<p class="text-black96">新品</p>
+		</a>
+		<a href="">
+			<img src="../images/fenleiicon.png" alt="">
+			<p class="text-black96">活动</p>
+		</a>
+		<a href="" class="select">
+			<img src="../images/fenleiiconselect.png" alt="">
+			<p class="text-black96">购物车</p>
+		</a>
+		<a href="">
+			<img src="../images/fenleiicon.png" alt="">
+			<p class="text-black96">我的</p>
+		</a>
+	</footer>
+
+	<!--未选中商品是提示-->
+	<div class="fixedtips">请至少选择一个产品</div>
+	<!--确定删除-->
+	<div class="deleteproductbg">
+		<div class="deleteproduct bg-white">
+			<p class="text-black3 font17 text-center">你确定删除该商品吗？</p>
+			<ul class="deleteproductbtns clearfloat">
+				<li class="cancel text-blue0118 floatleft font17 text-center">取消</li>
+				<li class="text-blue0118 font17 floatleft text-center">确定</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<script src="../js/shoppingcartpage.js"></script>
+</body>
+</html>

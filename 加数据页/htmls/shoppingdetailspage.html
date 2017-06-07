@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>详情页面</title>
+	<script src="../public/js/jquery.min.js"></script>
+	<script src="../public/swiper/swiper-3.4.2.min.js"></script>
+	<script src="../public/js/vue/vue.js"></script>
+	<script src="../public/js/vue/vue-resource.js"></script>
+	<script src="../public/js/publicjs.js"></script>
+	<link rel="stylesheet" href="../public/css/reset.css">
+	<link rel="stylesheet" href="../public/swiper/swiper-3.4.2.min.css">
+	<link rel="stylesheet" href="../public/css/samecss.css">
+	<link rel="stylesheet" href="../css/shoppingdetailspage.css">
+	<script>
+		/*document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5  < 128/3 ? 128/3 : document.documentElement.clientWidth / 7.5 + 'px';
+		window.onresize = function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5  < 128/3 ? 128/3 : document.documentElement.clientWidth / 7.5 + 'px';
+		}
+		console.log(document.documentElement.style.fontSize);*/
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75  < 64/3 ? 64/3 : document.documentElement.clientWidth / 3.75 + 'px';
+		window.onresize = function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75  < 64/3 ? 64/3 : document.documentElement.clientWidth / 3.75 + 'px';
+		}
+		console.log(document.documentElement.style.fontSize);
+	</script>
+</head>
+<body>
+<div id="appbox">
+	<!--顶部header-->
+	<header>
+		<a class="gobackbtn morecss" href="javascript:history.go(-1);" title="goback"></a>
+		<p class="font15 text-black24 text-center">纯草农庄{{appdata.sid}}</p>
+		<div class="imgbox"><img src="../images/share000.png" alt=""></div>
+	</header>
+	<!--头部结束-->
+
+	<!--内容部分-->
+	<div id="content">
+		<!-- Swiper -->
+		<div id="contentswiper1" class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide" v-for="item in appdata.thumb">
+					<div class="swiperslidecontent">
+						<!--16:9-->
+						<!--<video src=""  controls poster="../images/594x334.jpg"></video>-->
+						<img :src="item" alt="">
+					</div>
+				</div>
+
+
+				<!--<div class="swiper-slide">
+					<div class="swiperslidecontent">
+						&lt;!&ndash;16:9&ndash;&gt;
+						&lt;!&ndash;<video src=""  controls poster="../images/594x334.jpg"></video>&ndash;&gt;
+						<img src="../images/1080p.png" alt="">
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="swiperslidecontent">
+						&lt;!&ndash;16:9&ndash;&gt;
+						&lt;!&ndash;<video src=""  controls poster="../images/594x334.jpg"></video>&ndash;&gt;
+						<img src="../images/1080p.png" alt="">
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="swiperslidecontent">
+						&lt;!&ndash;16:9&ndash;&gt;
+						&lt;!&ndash;<video src=""  controls poster="../images/594x334.jpg"></video>&ndash;&gt;
+						<img src="../images/1080p.png" alt="">
+					</div>
+				</div>-->
+
+
+
+				<!--<div class="swiper-slide">
+					<div class="swiperslidecontent">
+						&lt;!&ndash;16:9&ndash;&gt;
+						<video src=""  controls poster="../images/594x334.jpg"></video>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="swiperslidecontent">
+						&lt;!&ndash;16:9&ndash;&gt;
+						<video src=""  controls poster="../images/594x334.jpg"></video>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="swiperslidecontent">
+						&lt;!&ndash;16:9&ndash;&gt;
+						<video src=""  controls poster="../images/594x334.jpg"></video>
+					</div>
+				</div>-->
+			</div>
+			<!-- Add Pagination -->
+			<!--<div class="swiper-pagination"></div>-->
+			<!--<div class="swiper-scrollbar"></div>-->
+		</div>
+
+		<div id="contentbottom">
+			<div id="titlebox">
+				<div class="title font18 text-black24">{{appdata.name}}</div>
+				<p class="font13 text-black115">{{appdata.des}}</p>
+				<span class="font13 text-red222">￥{{appdata.price}}元/套</span>
+				<p>活动价格：￥{{appdata.action_price}}元/套</p>
+			</div>
+			<!--规则-->
+			<!--<div class="guizebox">
+				<p class="guizetitle font14 text-black24 text-center">代养规则</p>
+				<p class="guizecontent font14 text-black24">认养套餐为1只公鸡2只母鸡，周期480-510天，每月每只母鸡配送鸡蛋8枚(共16枚)，无蛋期不得弃养，产蛋期弃养本金返还送蛋活动结束；认养满480天后，认养鸡可进行宰杀处理并进行配送，返还认养本金；超过510天用户未定情况下，由农庄统一做无害处理并返回认养本金。</p>
+			</div>
+			&lt;!&ndash;简介&ndash;&gt;
+			<div class="jianjiebox">
+				<p class="jianjietitle font14 text-black24 text-center">贵妃鸡简介</p>
+				<p class="jianjiecontent font14 text-black24">贵妃鸡源自英国皇室，头顶凤冠，黑白花羽，因似贵妃而得名。它体内富含氨基酸和多种微量元素，为生产安全、美味的鸡蛋提供了前提。纯草农庄的贵妃鸡早起以昆虫、草籽为食，晚归喂食自种玉米。农庄自行种植薰衣草和中草药，用来喂养贵妃鸡，能够有效抑菌、杀虫，替代药物，预防疾病，饲育过程不喂食激素、抗生素。
+					<br>纯草农庄创建于2011年4月，位于素有“天然氧吧”之称的河北省永清县。秉持“一切只为孩子健康”的理念，农庄不使用转基因种子，不使用化学农药、化肥、生长激素、除草剂。目前，农庄占地170余亩，划分为贵妃鸡养殖区和果蔬种植区，主要产品包括香草贵妃鸡（蛋），水果（杏、桃、李子、葡萄等），以及全年100多种时令蔬菜。现阶段，农庄有3000只贵妃鸡，拥有自由的空间，舒适的环境，合理的“男女”比例，力求让“贵妃”们心情愉悦。
+				</p>
+			</div>-->
+
+			<!--<div id="titlebox">
+				<div class="title font18 text-black24">贵妃鸡1+2套餐</div>
+				<p class="font13 text-black115">源自英国皇室，头顶凤冠，黑白花羽，因似贵妃而得名</p>
+				<span class="font13 text-red222">￥499元/套</span>
+				<p>活动价格：￥321元/套</p>
+			</div>
+			&lt;!&ndash;规则&ndash;&gt;
+			<div class="guizebox">
+				<p class="guizetitle font14 text-black24 text-center">代养规则</p>
+				<p class="guizecontent font14 text-black24">认养套餐为1只公鸡2只母鸡，周期480-510天，每月每只母鸡配送鸡蛋8枚(共16枚)，无蛋期不得弃养，产蛋期弃养本金返还送蛋活动结束；认养满480天后，认养鸡可进行宰杀处理并进行配送，返还认养本金；超过510天用户未定情况下，由农庄统一做无害处理并返回认养本金。</p>
+			</div>
+			&lt;!&ndash;简介&ndash;&gt;
+			<div class="jianjiebox">
+				<p class="jianjietitle font14 text-black24 text-center">贵妃鸡简介</p>
+				<p class="jianjiecontent font14 text-black24">贵妃鸡源自英国皇室，头顶凤冠，黑白花羽，因似贵妃而得名。它体内富含氨基酸和多种微量元素，为生产安全、美味的鸡蛋提供了前提。纯草农庄的贵妃鸡早起以昆虫、草籽为食，晚归喂食自种玉米。农庄自行种植薰衣草和中草药，用来喂养贵妃鸡，能够有效抑菌、杀虫，替代药物，预防疾病，饲育过程不喂食激素、抗生素。
+					<br>纯草农庄创建于2011年4月，位于素有“天然氧吧”之称的河北省永清县。秉持“一切只为孩子健康”的理念，农庄不使用转基因种子，不使用化学农药、化肥、生长激素、除草剂。目前，农庄占地170余亩，划分为贵妃鸡养殖区和果蔬种植区，主要产品包括香草贵妃鸡（蛋），水果（杏、桃、李子、葡萄等），以及全年100多种时令蔬菜。现阶段，农庄有3000只贵妃鸡，拥有自由的空间，舒适的环境，合理的“男女”比例，力求让“贵妃”们心情愉悦。
+				</p>
+			</div>-->
+			<!--猜你喜欢-->
+			<div class="guessulike">
+				<p class="gusuliketitle font14 text-black24 text-center">猜你喜欢</p>
+				<ul class="ulikelis clearfloat">
+					<li class="ulikeli floatleft" v-for="item2 in appdata.guess" @click="gotosubpage(item2.id)">
+						<div class="imgbox"><img :src="item2.thumb" alt=""></div>
+						<p class="font14 text-black24 _textover">{{item2.name}}</p>
+						<span class="font13 text-black115 _textover">{{item2.des}}</span>
+						<div class="price text-red222  font12">￥{{item2.price}}元/套</div>
+					</li>
+
+					<!--<li class="ulikeli floatleft">
+						<div class="imgbox"><img src="../images/jidan.png" alt=""></div>
+						<p class="font14 text-black24 _textover">纯草农庄贵妃鸡1+2套餐</p>
+						<span class="font13 text-black115 _textover">敢给孩子吃的蛋和鸡</span>
+						<div class="price text-red222  font12">￥499元/套</div>
+					</li>
+					<li class="ulikeli floatleft">
+						<div class="imgbox"><img src="../images/jidan.png" alt=""></div>
+						<p class="font14 text-black24 _textover">纯草农庄贵妃鸡1+2套餐</p>
+						<span class="font13 text-black115 _textover">敢给孩子吃的蛋和鸡</span>
+						<div class="price text-red222  font12">￥499元/套</div>
+					</li>
+					<li class="ulikeli floatleft">
+						<div class="imgbox"><img src="../images/jidan.png" alt=""></div>
+						<p class="font14 text-black24 _textover">纯草农庄贵妃鸡1+2套餐</p>
+						<span class="font13 text-black115 _textover">敢给孩子吃的蛋和鸡</span>
+						<div class="price text-red222  font12">￥499元/套</div>
+					</li>
+					<li class="ulikeli floatleft">
+						<div class="imgbox"><img src="../images/jidan.png" alt=""></div>
+						<p class="font14 text-black24 _textover">纯草农庄贵妃鸡1+2套餐</p>
+						<span class="font13 text-black115 _textover">敢给孩子吃的蛋和鸡</span>
+						<div class="price text-red222  font12">￥499元/套</div>
+					</li>-->
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="shoppingcartbottombox clearfloat bg-white">
+		<div class="shoppingcartbtn text-center floatleft" @click="gotoshoppingcartpage"><img src="../images/shoppingcart.png" alt=""></div>
+		<div class="addtoshoppingcart text-black24 font14 text-center floatleft" @click="addtoshoppingcartclick">加入购物车</div>
+		<div class="nowbuyit text-black24 font14 text-center floatleft">立即代养</div>
+	</div>
+</div>
+<script src="../js/shoppingdetailspage.js"></script>
+<script>
+	setTimeout(function () {
+		var swiper = new Swiper('#contentswiper1', {
+			pagination: '.swiper-pagination',
+			slidesPerView: 1.6,
+			centeredSlides: true,
+			paginationClickable: true,
+			spaceBetween: 5,
+			loop:false,
+			// 如果需要滚动条
+//		scrollbar: '.swiper-scrollbar',
+		});
+	},300)
+</script>
+</body>
+</html>

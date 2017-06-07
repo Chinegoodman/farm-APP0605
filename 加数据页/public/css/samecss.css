@@ -1,0 +1,376 @@
+*{
+	font-size: 12px;
+}
+html,body{
+	font-size: 100px;
+}
+img{
+	display: block;
+}
+.text-center{
+	text-align: center;
+}
+.text-left{
+	text-align: left;
+}
+.text-right{
+	text-align: right;
+}
+.floatleft{
+	float: left;	
+}
+.floatright{
+	float: right;
+}
+.height100{
+	height:100%;
+}
+.height50{
+	height:50%;
+}
+.width50{
+	width:50%;
+}
+.bg-white{
+	background-color: #fff;
+}
+.text-black3{
+	color: rgb(3,3,3);
+}
+.text-black24{
+	color: rgb(24,24,24);
+}
+.text-black34{
+	color: rgb(34,34,34);
+}
+.text-black53{
+	color: rgb(53,53,53);
+}
+.text-black70{
+	color: rgb(70,70,70);
+}
+.text-black90{
+	color: rgb(90,90,90);
+}
+.text-black96{
+	color: rgb(96,96,96);
+}
+.text-black97{
+	color: rgb(97,97,97);
+}
+.text-black115{
+	color: rgb(115,115,115);
+}
+.text-red211{
+	color: rgb(211,42,47);
+}
+.text-red222{
+	color: rgb(222,65,61);
+}
+.text-grey255{
+	color: rgb(255,255,255);
+}
+.text-blue0118{
+	color: rgb(0,118,255);
+}
+
+.font12{
+	font-size: 12px;
+}
+.font13{
+	font-size: 13px;
+}
+.font14{
+	font-size: 14px;
+}
+.font15{
+	font-size: 15px;
+}
+.font16{
+	font-size: 16px;
+}
+.font17{
+	font-size: 17px;
+}
+.font18{
+	font-size: 18px;
+}
+.font24{
+	font-size: 24px;
+}
+.marginauto{
+	margin:0 auto;
+}
+.paddingleft20{
+	padding-left: 0.2rem;
+}
+
+
+	/*header部分样式*/
+#headerswiper .swiper-slide>a{
+	display: block;
+	width:100%;
+	height:1.82rem;
+	overflow: hidden;
+}
+#headerswiper .swiper-slide>a>img{
+	width:100%;
+	height:auto;
+}
+#headerswiper{
+	position: relative;
+}
+
+#headercontentbox{
+	position: absolute;
+	left:0;
+	top:0.29rem;
+	width:100%;
+	height:0.24rem;
+	z-index: 1000;
+}
+#headerboxaddress{
+	float: left;
+	margin-left: 0.14rem;
+}
+#headerboxaddress>img{
+	float: left;
+	/*width:0.23rem;*/
+	width:auto;
+	height:0.23rem;
+}
+#headerboxaddress>span{
+	float: left;
+	line-height:0.24rem;
+}
+#headersearchbox{
+	position: absolute;
+	top:0;
+	left:0;
+	width:100%;
+}
+#headersearchbox>input{
+	display: block;
+	width:0.83rem;
+	height:0.24rem;
+	opacity:0.6;
+	padding:0 0.385rem;
+	background:rgb(255,255,255) url("../../images/searchipt.png") no-repeat;
+	background-position: 0.13rem 0.04rem;
+	background-size: 0.16rem 0.16rem;
+	font-size: 12px;
+	margin:0 auto;
+	outline:none;
+	border:none;
+	border-radius: 0.12rem;
+}
+#headersearchbox>input::-webkit-input-placeholder{
+	color: rgb(91,91,91);
+	font-size: 12px;
+}
+
+#headercaremabtn{
+	float: right;
+	margin-right: 0.16rem;
+}
+#headercaremabtn>img{
+	width:0.22rem;
+	height:0.22rem;
+	padding-top: 0.01rem;
+}
+
+
+/*footer部分样式*/
+/*footer设置*/
+footer{
+	position: fixed;
+	bottom:0;
+	width:100%;
+	/*height:0.40rem;*/
+	display: flex;
+	justify-content: space-around;
+	padding-top: 0.06rem;
+	padding-bottom: 0.05rem;
+	/*background-color: rgba(0,0,0,0.5);*/
+	background-color: rgb(255,255,255);
+	-webkit-box-shadow: 0 0 1px 1px #E7E7E7;
+	-moz-box-shadow: 0 0 1px 1px #E7E7E7;
+	box-shadow: 0 0 1px 1px #E7E7E7;
+}
+footer>a{
+	display: block;
+}
+footer>a>img{
+	margin:0 auto;
+	width:0.23rem;
+	height:0.23rem;
+}
+footer>a>p{
+	text-align: center;
+	font-size: 12px;
+	line-height:0.16rem;
+}
+.select>p{
+	color: rgb(24,24,24);
+}
+
+
+/*提示消息*/
+.fixedtips{
+	position: fixed;
+	left:50%;
+	top:50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	padding:0.2rem 0.3rem;
+	border-radius: 0.2rem;
+	background:rgba(0,0,0,0.5); 
+	background:-moz-linear-gradient(top, rgba(0,0,0,0.8), rgba(0,0,0,0.5));
+	background:-webkit-gradient(linear, 0 0, 0 bottom, from(rgba(0,0,0,0.8)), to(rgba(0,0,0,0.5)));
+	background:-o-linear-gradient(top, rgba(0,0,0,0.8), rgba(0,0,0,0.5));
+	color: #fff;
+
+	-webkit-animation:fadenone 1s 1s;
+	-o-animation:fadenone 1s 1s;
+	animation:fadenone 1s 1s;
+
+	animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+}
+/*.logintip{
+	background-color: #000;
+	color: #fff;
+	border-radius: 0.2rem;
+	padding:0.2rem 0.3rem;
+	position: fixed;
+	top:50%;
+	left:50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+
+	-webkit-animation:fadenone 1s 1s;
+	-o-animation:fadenone 1s 1s;
+	animation:fadenone 1s 1s;
+
+	animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+}*/
+
+@keyframes fadenone {
+	0%{opacity:1;
+		height:auto;
+		background-color: #000;
+	}
+	99%{
+		opacity:0;
+		background-color: #fff;
+	}
+	100%{
+		opacity:0;
+		display: none;
+		height:0;
+		overflow: hidden;
+		padding:0;
+	}
+}
+@-webkit-keyframes fadenone {
+	0%{opacity:1;
+		height:auto;
+		background-color: #000;
+	}
+	99%{
+		opacity:0;
+	}
+	100%{
+		opacity:0;
+		display: none;
+		height:0;
+		overflow: hidden;
+		padding:0;
+	}
+}
+
+/*确认弹出样式*/
+.deleteproductbg{
+	position: fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	background-color: rgba(0,0,0,0.4);
+}
+.deleteproduct{
+	width:2.7rem;
+	height:1.03rem;
+	border-radius: 0.12rem;
+	overflow: hidden;
+	position: absolute;
+	left:50%;
+	top:50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+.deleteproduct>p{
+	line-height:0.18rem;
+	padding-top: 0.2rem;
+	padding-bottom: 0.25rem;
+}
+.deleteproductbtns{
+	border-top: 1px solid rgba(77,77,77,0.1);
+}
+.deleteproductbtns>li{
+	width:1.34rem;
+	height:0.43rem;
+	line-height: 0.43rem;
+}
+.deleteproductbtns>li.cancel{
+	border-right: 1px solid rgba(77,77,77,0.1);
+}
+
+/*购物车样式*/
+.shoppingcartbottombox{
+	position: fixed;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:0.47rem;
+	-webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.08);
+	-moz-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.08);
+	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.08);
+}
+.shoppingcartbtn{
+	width:0.87rem;
+	height:0.47rem;
+	border-right: 1px solid rgb(216,216,216);
+	line-height: 0.47rem;
+}
+.shoppingcartbtn img{
+	width:0.2rem;
+	height:auto;
+	display: block;
+	margin:0.14rem auto 0;
+}
+.addtoshoppingcart{
+	width:1.455rem;
+	height:0.47rem;
+	line-height: 0.47rem;
+}
+.nowbuyit{
+	width:1.41rem;
+	height:0.47rem;
+	background-color: rgb(243,208,90);
+	line-height: 0.47rem;
+}

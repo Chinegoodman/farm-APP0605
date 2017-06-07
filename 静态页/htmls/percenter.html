@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>个人中心</title>
+	<script src="../public/js/jquery.min.js"></script>
+	<script src="../public/js/vue/vue.js"></script>
+	<script src="../public/js/vue/vue-resource.js"></script>
+	<script src="../public/js/publicjs.js"></script>
+	<link rel="stylesheet" href="../public/css/reset.css">
+	<link rel="stylesheet" href="../public/css/samecss.css">
+	<link rel="stylesheet" href="../css/percenter.css">
+	<script>
+		/*document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5  < 128/3 ? 128/3 : document.documentElement.clientWidth / 7.5 + 'px';
+		window.onresize = function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5  < 128/3 ? 128/3 : document.documentElement.clientWidth / 7.5 + 'px';
+		}
+		console.log(document.documentElement.style.fontSize);*/
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75  < 64/3 ? 64/3 : document.documentElement.clientWidth / 3.75 + 'px';
+		window.onresize = function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75  < 64/3 ? 64/3 : document.documentElement.clientWidth / 3.75 + 'px';
+		}
+		console.log(document.documentElement.style.fontSize);
+	</script>
+</head>
+<body>
+<div id="appbox">
+	<!--头部内容-->
+	<header>
+		<a class="gobackbtn morecss" href="javascript:history.go(-1);" title="goback"></a>
+		<div id="pertops">
+			<div class="imgbox">
+				<img src="../images/bankuailinkimg.png" alt="头像">
+			</div>
+			<p class="text-black24 font14 text-center">8ef0033告无法可哦怕</p>
+		</div>
+	</header>
+	<!--中间内容-->
+	<div id="content" class="">
+		<div class="content1 bg-white">
+			<div class="myorders">
+				<p class="font18 text-black24 morecss">我的订单</p>
+			</div>
+			<div class="myorderstatus">
+				<a href="">
+					<img src="../images/bankuailinkimg.png" alt="待发货">
+					<p class="font14 text-black24 text-center">待付款</p>
+				</a>
+				<a href="">
+					<img src="../images/bankuailinkimg.png" alt="待发货">
+					<p class="font14 text-black24 text-center">待发货</p>
+				</a>
+				<a href="">
+					<img src="../images/bankuailinkimg.png" alt="待发货">
+					<p class="font14 text-black24 text-center">已发货</p>
+				</a>
+			</div>
+		</div>
+
+		<div class="content2 bg-white">
+			<div class="content2li morecss">
+				<div class="imgbox floatleft"><img src="../images/headeraddress.png" alt=""></div>
+				<p class="font14 text-black24 floatleft">我的仓库</p>
+			</div>
+			<div class="content2li morecss">
+				<div class="imgbox floatleft"><img src="../images/headeraddress.png" alt=""></div>
+				<p class="font14 text-black24 floatleft">我的积分</p>
+			</div>
+			<div class="content2li content2lilast morecss">
+				<div class="imgbox floatleft"><img src="../images/headeraddress.png" alt=""></div>
+				<p class="font14 text-black24 floatleft">地址管理</p>
+			</div>
+		</div>
+
+
+		<div class="content3 bg-white morecss">
+			<div class="imgbox floatleft"><img src="../images/headeraddress.png" alt=""></div>
+			<p class="font14 text-black24 floatleft">商品上架</p>
+		</div>
+
+		<div class="content4 bg-white morecss">
+			<div class="imgbox floatleft"><img src="../images/headeraddress.png" alt=""></div>
+			<p class="font14 text-black24 floatleft">系统设置</p>
+		</div>
+	</div>
+	<!--底部内容-->
+	<footer>
+		<a href="">
+			<img src="../images/fenleiicon.png" alt="">
+			<p class="text-black96">首页</p>
+		</a>
+		<a href="">
+			<img src="../images/fenleiicon.png" alt="">
+			<p class="text-black96">新品</p>
+		</a>
+		<a href="">
+			<img src="../images/fenleiicon.png" alt="">
+			<p class="text-black96">活动</p>
+		</a>
+		<a href="">
+			<img src="../images/fenleiicon.png" alt="">
+			<p class="text-black96">购物车</p>
+		</a>
+		<a href="" class="select">
+			<img src="../images/fenleiiconselect.png" alt="">
+			<p class="text-black96">我的</p>
+		</a>
+	</footer>
+</div>
+<script src="../js/percenter.js"></script>
+</body>
+</html>

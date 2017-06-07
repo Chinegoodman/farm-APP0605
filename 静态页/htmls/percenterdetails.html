@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>个人中心</title>
+	<script src="../public/js/jquery.min.js"></script>
+	<script src="../public/js/vue/vue.js"></script>
+	<script src="../public/js/vue/vue-resource.js"></script>
+	<script src="../public/js/publicjs.js"></script>
+	<link rel="stylesheet" href="../public/css/reset.css">
+	<link rel="stylesheet" href="../public/css/samecss.css">
+	<link rel="stylesheet" href="../css/percenterdetails.css">
+	<script>
+		/*document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5  < 128/3 ? 128/3 : document.documentElement.clientWidth / 7.5 + 'px';
+		window.onresize = function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5  < 128/3 ? 128/3 : document.documentElement.clientWidth / 7.5 + 'px';
+		}
+		console.log(document.documentElement.style.fontSize);*/
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75  < 64/3 ? 64/3 : document.documentElement.clientWidth / 3.75 + 'px';
+		window.onresize = function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75  < 64/3 ? 64/3 : document.documentElement.clientWidth / 3.75 + 'px';
+		}
+		console.log(document.documentElement.style.fontSize);
+	</script>
+</head>
+<body>
+<div id="appbox">
+	<!--头部内容-->
+	<header>
+		<a class="gobackbtn morecss" href="javascript:history.go(-1);" title="goback"></a>
+		<p class="font15 text-black24 text-center">个人信息</p>
+		<div id="pertops">
+			<div class="imgbox">
+				<img src="../images/bankuailinkimg.png" alt="头像">
+			</div>
+			<p class="text-black96 font14 text-center">点击修改头像</p>
+		</div>
+	</header>
+	<!--中间内容-->
+	<div id="content" class="">
+		<div class="content2 bg-white">
+			<div class="content2li">
+				<!--<div class="imgbox floatleft"><img src="../images/headeraddress.png" alt=""></div>-->
+				<p class="font14 text-black24 floatleft">昵称</p>
+
+				<p class="font14 text-black24 floatright">xi小王啊</p>
+			</div>
+			<div class="content2li">
+				<!--<div class="imgbox floatleft"><img src="../images/headeraddress.png" alt=""></div>-->
+				<p class="font14 text-black24 floatleft">性别</p>
+
+				<p class="font14 text-black24 floatright">xi小王啊</p>
+			</div>
+			<div class="content2li content2lilast">
+				<!--<div class="imgbox floatleft"><img src="../images/headeraddress.png" alt=""></div>-->
+				<p class="font14 text-black24 floatleft">出生日期</p>
+
+				<p class="font14 text-black24 floatright">19000201</p>
+			</div>
+		</div>
+
+		<div class="content2 bg-white">
+			<div class="content2li">
+				<!--<div class="imgbox floatleft"><img src="../images/headeraddress.png" alt=""></div>-->
+				<p class="font14 text-black24 floatleft">手机号</p>
+
+				<p class="font14 text-black24 floatright">绑定></p>
+			</div>
+			<div class="content2li">
+				<!--<div class="imgbox floatleft"><img src="../images/headeraddress.png" alt=""></div>-->
+				<p class="font14 text-black24 floatleft">密码</p>
+
+				<p class="font14 text-black24 floatright">修改></p>
+			</div>
+		</div>
+
+		<div class="content2 bg-white">
+			<div class="content2li">
+				<!--<div class="imgbox floatleft"><img src="../images/headeraddress.png" alt=""></div>-->
+				<p class="font14 text-black24 floatleft">微信登录</p>
+
+				<p class="font14 text-black24 floatright">未启用></p>
+			</div>
+			<div class="content2li">
+				<!--<div class="imgbox floatleft"><img src="../images/headeraddress.png" alt=""></div>-->
+				<p class="font14 text-black24 floatleft">新浪微博登录></p>
+
+				<p class="font14 text-black24 floatright">未启用></p>
+			</div>
+			<div class="content2li">
+				<!--<div class="imgbox floatleft"><img src="../images/headeraddress.png" alt=""></div>-->
+				<p class="font14 text-black24 floatleft">QQ登陆></p>
+
+				<p class="font14 text-black24 floatright">未启用></p>
+			</div>
+		</div>
+
+
+		<div class="content4 bg-white">
+			<!--<div class="imgbox floatleft"><img src="../images/headeraddress.png" alt=""></div>-->
+			<p class="font14 text-black24 text-center">系统设置</p>
+		</div>
+	</div>
+</div>
+<script src="../js/percenterdetails.js"></script>
+</body>
+</html>
